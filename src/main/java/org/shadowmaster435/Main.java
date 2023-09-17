@@ -1,6 +1,7 @@
 package org.shadowmaster435;
 
 import org.shadowmaster435.util.*;
+import org.shadowmaster435.util.Window;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,23 +9,18 @@ import java.awt.image.BufferedImage;
 
 public class Main {
 
-    public static MainFrame main_window;
+    public static Window main_window;
     public static JButton file_button;
     public static JButton save_button;
     public static JButton generate_button;
-
     public static String curr_file_path = "";
-
     public static BufferedImage image;
-
     public static JTextField x;
     public static JTextField y;
-
     public static final Dimension window_size = new Dimension(512, 100);
 
     public static void main(String[] args) {
-        main_window = new MainFrame(0,0,window_size.width,window_size.height);
-
+        main_window = new Window(0,0,window_size.width,window_size.height);
         init();
     }
 
@@ -43,7 +39,7 @@ public class Main {
         root_frame.setLayout(new GridLayout(1,1,0,0));
         JButton fb = Instance.button(50, 50, 200, 40, "Open");
         fb.addActionListener(main_window);
-        JButton gb = Instance.button(50, 50, 200, 40, "Generate");
+        JButton gb = Instance.button(50, 50, 200, 40, "Preview");
         gb.addActionListener(e -> open_preview_window(AtlasGenerator.generate(Instance.load_image(curr_file_path))));
         JButton sb = Instance.button(50, 50, 200, 40, "Save");
         sb.addActionListener(main_window);
@@ -72,7 +68,9 @@ public class Main {
         JFrame popup = new JFrame();
         var display = new ImageDisplay(0,0,0,0,image);
         popup.add(display);
-        popup.setSize(AtlasGenerator.tile_resolution);
+        var actual_resolution = new Dimension(AtlasGenerator.tile_resolution.width * 12, AtlasGenerator.tile_resolution.height * 5);
+        popup.setSize(actual_resolution);
+        popup.setTitle("Preview");
         popup.setVisible(true);
     }
 }
