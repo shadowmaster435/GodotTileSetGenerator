@@ -21,6 +21,7 @@ public class Main {
 
     public static void main(String[] args) {
         main_window = new Window(0,0,window_size.width,window_size.height);
+        main_window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         init();
     }
 
