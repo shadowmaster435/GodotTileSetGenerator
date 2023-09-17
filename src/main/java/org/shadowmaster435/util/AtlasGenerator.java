@@ -1,6 +1,6 @@
-package org.example.util;
+package org.shadowmaster435.util;
 
-import org.example.Main;
+import org.shadowmaster435.Main;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

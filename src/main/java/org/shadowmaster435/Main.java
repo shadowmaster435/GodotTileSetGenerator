@@ -1,18 +1,10 @@
-package org.example;
+package org.shadowmaster435;
 
-import org.example.util.*;
-import org.example.util.Window;
+import org.shadowmaster435.util.*;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
-import java.io.File;
-import java.io.IOException;
 
 public class Main {
 

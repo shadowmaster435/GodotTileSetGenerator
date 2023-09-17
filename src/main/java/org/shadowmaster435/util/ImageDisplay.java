@@ -1,4 +1,4 @@
-package org.example.util;
+package org.shadowmaster435.util;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
